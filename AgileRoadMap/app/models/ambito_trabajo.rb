@@ -1,0 +1,2 @@
+class AmbitoTrabajo < ApplicationRecord
+end

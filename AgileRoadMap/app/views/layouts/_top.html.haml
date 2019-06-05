@@ -1,0 +1,29 @@
+.top
+  .container
+    %ul.loginbar.pull-right
+      %li.language-switcher
+        = icon('fas', 'globe')
+        %ul.lenguages
+          = lang_link t('english'), :en
+          = lang_link t('spanish'), :es
+      - if signed_in?
+        %li
+          = link_to it('top.signout'), signout_path, method: "delete"
+      - else
+        %li
+          = link_to it('top.signup'), signup_path
+        %li.devider
+        %li
+          = link_to it('top.signin'), signin_path
+    %ul.switch-language  
+      - if I18n.locale == I18n.default_locale 
+        %li.active Español
+        %li.devider
+        %li 
+          = link_to "English", :locale=> 'en'
+      - else 
+        %li 
+          = link_to "Español", :locale=>'es'
+        %li.devider
+        %li.active English
+

@@ -1,0 +1,2 @@
+class SectorEmpresa < ApplicationRecord
+end
